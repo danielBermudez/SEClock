@@ -8,9 +8,14 @@
 
 import Foundation
 class CLock{
+    var newDate : Date?
     
     var currentTime :  Date{
-        return Date()
         
+        get {
+        return Date()
+        }set(date){
+            newDate = date
+        }
     }
 }
