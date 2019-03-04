@@ -21,10 +21,19 @@ class ViewController: UIViewController {
         print("viewDidLoad")
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
+        
             }
+//    override var prefersStatusBarHidden: Bool { get{
+//        return true
+//        }}
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        get{
+            return UIInterfaceOrientationMask.all
+        }}
     deinit{
         if let timer = self.timer{
        timer .invalidate()
+      
         }
     }
     @objc func updateTimeLabel(){
