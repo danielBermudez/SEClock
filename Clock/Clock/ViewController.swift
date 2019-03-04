@@ -12,6 +12,7 @@ class ViewController: UIViewController {
   
     
     var timer : Timer?
+    var colonTimer : Timer?
     
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         print("viewDidLoad")
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
+        colonTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(ViewController.deleteColons), userInfo: nil, repeats: true)
         
             }
 //    override var prefersStatusBarHidden: Bool { get{
@@ -37,11 +39,21 @@ class ViewController: UIViewController {
         }
     }
     @objc func updateTimeLabel(){
+        
         timeLabel.textColor = #colorLiteral(red: 0.182079196, green: 0.8254847527, blue: 0.6376379132, alpha: 1)
+        
         let formatter = DateFormatter()
         formatter.timeStyle = .long
+        
         timeLabel .text = "\(formatter.string(from: clock.currentTime ) )"
+        
     }
+    @objc func deleteColons(){
+        let formatter = DateFormatter()
+        formatter.timeStyle = .long
+        timeLabel .text = "\(formatter.string(from: clock.currentTime ).replacingOccurrences(of: ":", with: " ") )"
+    }
+ 
  
  
     override func viewDidAppear(_ animated: Bool) {
