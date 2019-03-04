@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     let clock = CLock()
   
     
-    
+    var timer : Timer?
     
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -20,19 +20,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
-        timeLabel.textColor = #colorLiteral(red: 1, green: 0.5843137255, blue: 0, alpha: 0.5289223031)
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-  
-       timeLabel .text = "\(formatter.string(from: clock.currentTime ) )"
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateTimeLabel), name: UIApplication.willEnterForegroundNotification, object: nil)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
             }
     deinit{
-        NotificationCenter.default.removeObserver(self)
+        if let timer = self.timer{
+       timer .invalidate()
+        }
     }
     @objc func updateTimeLabel(){
+        timeLabel.textColor = #colorLiteral(red: 0.182079196, green: 0.8254847527, blue: 0.6376379132, alpha: 1)
         let formatter = DateFormatter()
-        formatter.timeStyle = .short
+        formatter.timeStyle = .long
         timeLabel .text = "\(formatter.string(from: clock.currentTime ) )"
     }
  

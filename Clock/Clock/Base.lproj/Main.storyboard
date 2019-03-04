@@ -22,8 +22,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZn-pk-A1z">
-                                <rect key="frame" x="152" y="80" width="71.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="128" y="181" width="119" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" red="0.15999999642372131" green="0.15999999642372131" blue="0.15999999642372131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LZn-pk-A1z" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Cy0-WK-fsK"/>
-                            <constraint firstItem="LZn-pk-A1z" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="60" id="eb2-IY-fX3"/>
+                            <constraint firstItem="LZn-pk-A1z" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="161" id="eb2-IY-fX3"/>
                         </constraints>
                     </view>
                     <connections>
